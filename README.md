@@ -1,47 +1,58 @@
 # amazon-mws (Amazon Marketplace Web Service)
-[![Version](https://img.shields.io/npm/v/amazon-mws.svg)](https://www.npmjs.org/package/amazon-mws)
-[![Build Status](https://travis-ci.org/bhushankumarl/amazon-mws.svg?branch=master)](https://travis-ci.org/bhushankumarl/amazon-mws)
 
-This API supported Amazon Marketplace Web Service(MWS)'s standard REST-style API that accepts/returns JSON requests and Here is the [API reference, Click Here](http://docs.developer.amazonservices.com/en_IN/dev_guide/DG_IfNew.html)
+[![Version](https://img.shields.io/npm/v/amazon-mws.svg)](https://www.npmjs.org/package/amazon-mws)[![Build Status](https://travis-ci.org/bhushankumarl/amazon-mws.svg?branch=master)](https://travis-ci.org/bhushankumarl/amazon-mws)
+
+Testing to save This API supported Amazon Marketplace Web Service(MWS)'s standard REST-style API that accepts/returns JSON requests and Here is the [API reference, Click Here](http://docs.developer.amazonservices.com/en_IN/dev_guide/DG_IfNew.html)
 
 You can testify API through [Amazon MWS Scratchpad](https://mws.amazonservices.in/scratchpad/index.html) without any installation.
 
 You can find [examples of JavaScript and TypeScript Click here](https://github.com/bhushankumarl/amazon-mws/tree/master/examples). This will help you for faster implementation of Amazon Marketplace Web Service's(MWS).
 
-##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback !
+##### It does supports EcmaScript 5, EcmaScript 6, EcmaScript 8, TypeScript, async-await, Promises, Callback !
+
 ##### It does also supports for AWS Lambda like serverless cloud function call.
+
 ##### It supports pure JSON response.
+
 ##### All methods support Promise and Callback both.
+
 ##### Please Feel free to create Issue for any help !
+
 ##### All developers/contributors are requested to open Pull Request/Merge Request on development branch. Please make sure Test Cases be passed.
 
 ## Installation
+
 ```bash
 npm install amazon-mws --save
 ```
 
 ## Test Cases
+
 ```bash
 npm run test.mocha
 ```
 
 ## Debugging
+
 ```bash
 export DEBUG=MWS:*
 ```
 
 ## Usage
+
 ```bash
 export AWS_ACCESS_KEY_ID=KEY
 export AWS_SECRET_ACCESS_KEY=SECRET
 ```
 
 ## Configuration Using JavaScript
+
 ```js
 var amazonMws = require('amazon-mws')('AWS_ACCESS_KEY_ID','AWS_SECRET_ACCESS_KEY');
 ```
 
 ## Configuration Using TypeScript
+
 ```typescript
 import * as MwsApi from 'amazon-mws';
 
@@ -50,11 +61,14 @@ amazonMws.setApiKey(accessKey, accessSecret);
 ```
 
 ## Pull Request
+
 - Contributors can send their Pull Request to `development` branch.
 - Kindly validate test cases & linting before opening new PR.
 
 #### Success or Error StatusCode can be obtained directly using StatusCode property of response. It will give you same as what Amazon MWS provides.
+
 #### It is also sample of the error responses.
+
 ```
 {
    Type:'Sender',
@@ -77,7 +91,9 @@ amazonMws.setApiKey(accessKey, accessSecret);
 ```
 
 #### Additionally all api returns Throttling: Limits to how often you can submit requests
+
 Reference : http://docs.developer.amazonservices.com/en_CA/dev_guide/DG_Throttling.html
+
 ```json
 {
   "x-mws-quota-max": "60.0",
@@ -86,13 +102,17 @@ Reference : http://docs.developer.amazonservices.com/en_CA/dev_guide/DG_Throttli
   "x-mws-timestamp": "2017-12-08T07:52:15.567Z"
 }
 ```
+
 ## Do you need an expert?
-Are you finding a developer for your world-class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)
-Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
+
+Are you finding a developer for your world-class product? If yes, please contact here. [Submit your project request here.](https://goo.gl/forms/UofdG5GY5iHMoUWg2)Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 
 ## Examples
+
 ### Feeds
+
 #### Get Feed Submission List
+
 ```
     amazonMws.feeds.search({
         'Version': '2009-01-01',
@@ -109,6 +129,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Feed Submission Result
+
 ```
     var FeedSubmissionId = '10101010XXX';
     amazonMws.feeds.search({
@@ -127,6 +148,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Feed Submission Result Charset
+
 ```
     /**
      * Use __CHARSET__ to override charset option.;
@@ -151,6 +173,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Feed Submission Result Raw
+
 ```
     /**
      * Use __RAW__ to get the raw response in response->data;
@@ -175,6 +198,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Submit Feed
+
 ```
     var FeedContent = fse.readFileSync('./file.txt', 'UTF-8');
     console.log('FeedContent ', FeedContent);
@@ -196,7 +220,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Finances
+
 #### List Financial Event Groups
+
 ```
     amazonMws.finances.search({
         'Version': '2015-05-01',
@@ -214,7 +240,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Fulfillment Inbound Shipment
+
 #### Get Inbound Guidance For SKU
+
 ```
     amazonMws.fulfillmentInboundShipment.search({
         'Version': '2010-10-01',
@@ -233,7 +261,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Fulfillment Inventory
+
 #### List Inventory Supply
+
 ```
     amazonMws.fulfillmentInventory.search({
         'Version': '2010-10-01',
@@ -252,7 +282,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Fulfillment Outbound Shipment
+
 #### Create Fulfillment Order
+
 ```
     amazonMws.fulfillmentOutboundShipment.create({
         'Version': '2010-10-01',
@@ -293,6 +325,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List All Fulfillment Orders
+
 ```
     amazonMws.fulfillmentOutboundShipment.search({
         'Version': '2010-10-01',
@@ -310,7 +343,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Merchant Fulfillment
+
 #### Create Shipment
+
 ```
     amazonMws.merchantFulfillment.create({
         'Version': '2015-06-01',
@@ -347,6 +382,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Eligible Shipping Services
+
 ```
     amazonMws.merchantFulfillment.search({
         'Version': '2015-06-01',
@@ -382,7 +418,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Orders
+
 #### List Order Items
+
 ```
     amazonMws.orders.search({
         'Version': '2013-09-01',
@@ -400,6 +438,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Orders
+
 ```
     amazonMws.orders.search({
         'Version': '2013-09-01',
@@ -418,6 +457,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Orders Filter Status
+
 ```
     amazonMws.orders.search({
         'Version': '2013-09-01',
@@ -438,7 +478,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Products
+
 #### Get Competitive Pricing For ASIN
+
 ```
     amazonMws.products.searchFor({
         'Version': '2011-10-01',
@@ -457,6 +499,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Lowest Priced Offers For ASIN
+
 ```
     amazonMws.products.searchFor({
         'Version': '2011-10-01',
@@ -476,6 +519,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Lowest Priced Offers For SKU
+
 ```
     amazonMws.products.searchFor({
         'Version': '2011-10-01',
@@ -495,6 +539,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Matching Product
+
 ```
     amazonMws.products.search({
         'Version': '2011-10-01',
@@ -514,6 +559,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Matching Product For Id
+
 ```
     amazonMws.products.search({
         'Version': '2011-10-01',
@@ -533,6 +579,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Matching Product Multiple ASIN
+
 ```
     var ASINList = ['ASIN.1', 'ASIN.2'];
     var data = {
@@ -558,6 +605,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get My Fees Estimate
+
 ```
     amazonMws.products.searchFor({
         'Version': '2011-10-01',
@@ -584,6 +632,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get My Price For ASIN
+
 ```
     amazonMws.products.searchFor({
         'Version': '2011-10-01',
@@ -602,6 +651,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Matching Products
+
 ```
     amazonMws.products.search({
         'Version': '2011-10-01',
@@ -621,7 +671,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Recommendations
+
 #### Get Last Updated Time For Recommendations
+
 ```
     amazonMws.recommendations.searchFor({
         'Version': '2013-04-01',
@@ -639,6 +691,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Recommendations
+
 ```
     amazonMws.recommendations.searchFor({
         'Version': '2013-04-01',
@@ -659,7 +712,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Reports
+
 #### Get Report
+
 ```
     /**
      * This will not provide you Throttling details in Header.
@@ -681,6 +736,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Report List
+
 ```
     amazonMws.reports.search({
         'Version': '2009-01-01',
@@ -698,6 +754,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Report Request List
+
 ```
     var ReportRequestId = '10101010XXX';
     amazonMws.reports.search({
@@ -716,6 +773,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Request Report
+
 ```
     amazonMws.reports.submit({
         'Version': '2009-01-01',
@@ -733,7 +791,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Sample
+
 #### Get Matching Product Async Await
+
 ```
     try {
         var response = await amazonMws.products.search({
@@ -751,6 +811,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Get Matching Product Promise
+
 ```
     amazonMws.products.search({
         'Version': '2011-10-01',
@@ -767,6 +828,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Orders
+
 ```
     amazonMws.setApiKey(accessKey, accessSecret);
     amazonMws.setHost('YOUR HOST');
@@ -791,7 +853,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Sellers
+
 #### List Marketplace Participations
+
 ```
     amazonMws.sellers.search({
         'Version': '2011-07-01',
@@ -808,6 +872,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Marketplace Participations By Next Token
+
 ```
     amazonMws.sellers.search({
         'Version': '2011-07-01',
@@ -825,7 +890,9 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 ### Subscriptions
+
 #### Create Subscription
+
 ```
     amazonMws.subscriptions.create({
         'Version': '2013-07-01',
@@ -848,6 +915,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Delete Subscription
+
 ```
     amazonMws.subscriptions.remove({
         'Version': '2013-07-01',
@@ -869,6 +937,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### List Subscriptions
+
 ```
     amazonMws.subscriptions.searchFor({
         'Version': '2013-07-01',
@@ -886,6 +955,7 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 ```
 
 #### Register Destination
+
 ```
     amazonMws.subscriptions.create({
         'Version': '2013-07-01',
@@ -904,4 +974,3 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
         console.log('response', response);
     });    
 ```
-
