@@ -4,7 +4,7 @@
 
 This API supported Amazon Marketplace Web Service(MWS)'s standard REST-style API that accepts/returns JSON requests and Here is the [API reference, Click Here](http://docs.developer.amazonservices.com/en_IN/dev_guide/DG_IfNew.html)
 
-You can testify API through [Amazon MWS Scratchpad](https://mws.amazonservices.in/scratchpad/index.html) without any installation. - iOS test
+You can testify API through [Amazon MWS Scratchpad](https://mws.amazonservices.in/scratchpad/index.html) without any installation. - iOS test!!
 
 You can find [examples of JavaScript and TypeScript Click here](https://github.com/bhushankumarl/amazon-mws/tree/master/examples). This will help you for faster implementation of Amazon Marketplace Web Service's(MWS).
 
